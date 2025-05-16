@@ -19,11 +19,12 @@ import java.util.Arrays;
  */
 public class NovoPersonagemController {
 
-    static String[] classesArr = {"Bárbaro", "Bardo", "Bruxo", "Clérigo", 
+    static final String[] classesArr = {"Bárbaro", "Bardo", "Bruxo", "Clérigo", 
             "Druida", "Feiticeiro", "Guerreiro", "Ladino", "Mago", "Monge", 
             "Paladino", "Patrulheiro"};
-    
-    static HashSet<String> classesValidas = new HashSet<>(Arrays.asList(classesArr));
+    static final HashSet<String> classesValidas = new HashSet<>(Arrays.asList(classesArr));
+    static final Paint corValida = Paint.valueOf("#00c452");
+    static final Paint corInvalida = Paint.valueOf("#c40055");
     
     @FXML
     private TextField nomeInput;
@@ -64,15 +65,15 @@ public class NovoPersonagemController {
             int nivel = Integer.valueOf(levelStr);
             if (nivel < 1 || nivel > 20) {
                 nivelInputValidadeLabel.setText("Inv.");
-                nivelInputValidadeLabel.setTextFill(Paint.valueOf("c40055"));
+                nivelInputValidadeLabel.setTextFill(corInvalida);
             }
             else {
                 nivelInputValidadeLabel.setText("Vál.");
-                nivelInputValidadeLabel.setTextFill(Paint.valueOf("#00c452"));
+                nivelInputValidadeLabel.setTextFill(corValida);
             }
         } catch (Exception ee) {
                 nivelInputValidadeLabel.setText("Inv.");
-                nivelInputValidadeLabel.setTextFill(Paint.valueOf("c40055"));
+                nivelInputValidadeLabel.setTextFill(corInvalida);
         }
     }
     
@@ -81,10 +82,10 @@ public class NovoPersonagemController {
        String classe = classeInput.getText();
        if (classesValidas.contains(classe)) {
                 classeInputValidadeLabel.setText("Vál.");
-                classeInputValidadeLabel.setTextFill(Paint.valueOf("#00c452"));
+                classeInputValidadeLabel.setTextFill(corValida);
        } else {
                 classeInputValidadeLabel.setText("Inv.");
-                classeInputValidadeLabel.setTextFill(Paint.valueOf("#c40055"));
+                classeInputValidadeLabel.setTextFill(corInvalida);
        }
     }
 }
