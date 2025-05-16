@@ -9,6 +9,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Paint;
+import java.util.HashSet;
+import java.util.Arrays;
 
 /**
  * FXML Controller class
@@ -17,6 +19,12 @@ import javafx.scene.paint.Paint;
  */
 public class NovoPersonagemController {
 
+    static String[] classesArr = {"Bárbaro", "Bardo", "Bruxo", "Clérigo", 
+            "Druida", "Feiticeiro", "Guerreiro", "Ladino", "Mago", "Monge", 
+            "Paladino", "Patrulheiro"};
+    
+    static HashSet<String> classesValidas = new HashSet<>(Arrays.asList(classesArr));
+    
     @FXML
     private TextField nomeInput;
     
@@ -29,6 +37,13 @@ public class NovoPersonagemController {
     
     @FXML 
     private Label nivelInputValidadeLabel;
+    
+    
+    @FXML
+    private TextField classeInput;
+    
+    @FXML
+    private Label classeInputValidadeLabel;
     
     
     @FXML
@@ -59,5 +74,17 @@ public class NovoPersonagemController {
                 nivelInputValidadeLabel.setText("Inv.");
                 nivelInputValidadeLabel.setTextFill(Paint.valueOf("c40055"));
         }
+    }
+    
+    @FXML
+    private void processClassInput(KeyEvent e) {
+       String classe = classeInput.getText();
+       if (classesValidas.contains(classe)) {
+                classeInputValidadeLabel.setText("Vál.");
+                classeInputValidadeLabel.setTextFill(Paint.valueOf("#00c452"));
+       } else {
+                classeInputValidadeLabel.setText("Inv.");
+                classeInputValidadeLabel.setTextFill(Paint.valueOf("#c40055"));
+       }
     }
 }
