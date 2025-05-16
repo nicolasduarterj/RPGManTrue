@@ -1,0 +1,10 @@
+com/nduarte/rpgmantrue/App.class
+com/nduarte/rpgmantrue/database/MainSQLiteConnection.class
+com/nduarte/rpgmantrue/controllers/SecondaryController.class
+com/nduarte/rpgmantrue/database/DatabaseInitializationException.class
+com/nduarte/rpgmantrue/controllers/MainMenuController.class
+com/nduarte/rpgmantrue/tests/PersonagemTests.class
+com/nduarte/rpgmantrue/models/Personagem.class
+com/nduarte/rpgmantrue/controllers/PrimaryController.class
+com/nduarte/rpgmantrue/controllers/NovoPersonagemController.class
+module-info.class
