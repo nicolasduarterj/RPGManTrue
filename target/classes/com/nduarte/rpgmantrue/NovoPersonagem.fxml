@@ -24,11 +24,11 @@
             <Separator layoutX="286.0" layoutY="88.0" orientation="VERTICAL" prefHeight="322.0" prefWidth="0.0" style="-fx-background-color: #222222; -fx-border-color: #222222;" />
             <TextField fx:id="classeInput" layoutX="366.0" layoutY="120.0" onKeyTyped="#processClassInput" prefHeight="24.0" prefWidth="200.0" promptText="Classe" style="-fx-background-color: #444444; -fx-text-fill: #d9d9d9;" />
             <TextField fx:id="nivelInput" layoutX="14.0" layoutY="281.0" onKeyTyped="#processLevelInput" prefHeight="24.0" prefWidth="200.0" promptText="Nível" style="-fx-background-color: #444444; -fx-text-fill: #d9d9d9;" />
-            <TextField layoutX="366.0" layoutY="281.0" prefHeight="24.0" prefWidth="200.0" promptText="HP Máximo" style="-fx-background-color: #444444; -fx-text-fill: #d9d9d9;" />
+            <TextField fx:id="hpInput" layoutX="366.0" layoutY="281.0" onKeyTyped="#processHp" prefHeight="24.0" prefWidth="200.0" promptText="HP Máximo" style="-fx-background-color: #444444; -fx-text-fill: #d9d9d9;" />
             <Label fx:id="nomeInputCounterLabel" layoutX="228.0" layoutY="124.0" text="(0/50)" textFill="#c40055" />
             <Label fx:id="classeInputValidadeLabel" layoutX="319.0" layoutY="124.0" text="Inv." textFill="#c40055" />
             <Label fx:id="nivelInputValidadeLabel" layoutX="236.0" layoutY="285.0" text="Inv." textFill="#c40055" />
-            <Label layoutX="319.0" layoutY="285.0" text="Inv." textFill="#c40055" />
+            <Label fx:id="hpInputValidadeLabel" layoutX="319.0" layoutY="285.0" text="Inv." textFill="#c40055" />
          </children>
       </AnchorPane>
    </children>

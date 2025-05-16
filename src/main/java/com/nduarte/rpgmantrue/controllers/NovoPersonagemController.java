@@ -46,6 +46,11 @@ public class NovoPersonagemController {
     @FXML
     private Label classeInputValidadeLabel;
     
+    @FXML
+    private TextField hpInput;
+    
+    @FXML
+    private Label hpInputValidadeLabel;
     
     @FXML
     private void processNameInput(KeyEvent e) {
@@ -87,5 +92,19 @@ public class NovoPersonagemController {
                 classeInputValidadeLabel.setText("Inv.");
                 classeInputValidadeLabel.setTextFill(corInvalida);
        }
+    }
+    
+    @FXML
+    private void processHp(KeyEvent e) {
+        try {
+            int hp = Integer.valueOf(hpInput.getText());
+            if (hp < 0) throw new IllegalArgumentException("Hp deve ser maior que 0");
+            
+            hpInputValidadeLabel.setText("Vál.");
+            hpInputValidadeLabel.setTextFill(corValida);
+        } catch (Exception ee) {
+            hpInputValidadeLabel.setText("Inv.");
+            hpInputValidadeLabel.setTextFill(corInvalida);
+        }
     }
 }
