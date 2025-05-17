@@ -11,6 +11,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Paint;
 import java.util.HashSet;
 import java.util.Arrays;
+import com.nduarte.rpgmantrue.App;
+import java.io.IOException;
 
 /**
  * FXML Controller class
@@ -29,7 +31,6 @@ public class NovoPersonagemController {
     @FXML
     private TextField nomeInput;
     
-    
     @FXML
     private Label nomeInputCounterLabel;
     
@@ -38,7 +39,6 @@ public class NovoPersonagemController {
     
     @FXML 
     private Label nivelInputValidadeLabel;
-    
     
     @FXML
     private TextField classeInput;
@@ -106,5 +106,10 @@ public class NovoPersonagemController {
             hpInputValidadeLabel.setText("Inv.");
             hpInputValidadeLabel.setTextFill(corInvalida);
         }
+    }
+    
+    @FXML
+    private void cancelCreation() throws IOException {
+        App.setRoot("MainMenu");
     }
 }
