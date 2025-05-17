@@ -28,7 +28,7 @@ public class MainMenuController implements Initializable {
     
     @FXML
     public void createChar() throws IOException {
-        App.setRoot("NovoPersonagem");
+        App.setRoot("ResponsiveNovoPersonagem");
     }
     
 }
