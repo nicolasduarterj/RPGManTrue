@@ -34,7 +34,7 @@
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
          <children>
             <TextField fx:id="nomeInput" onKeyTyped="#processNameInput" promptText="Nome" style="-fx-background-color: #666666; -fx-text-fill: #d9d9d9;" />
-            <Label fx:id="nomeInputCounterLabel" text="Inv." textFill="#c40055">
+            <Label fx:id="nomeInputCounterLabel" text="(0/50)" textFill="#c40055">
                <HBox.margin>
                   <Insets left="30.0" />
                </HBox.margin>
@@ -78,7 +78,7 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <children>
-            <Button mnemonicParsing="false" onAction="#cancelCreation" style="-fx-background-color: #444444;" text="Criar ---&gt;" textFill="WHITE" />
+            <Button mnemonicParsing="false" onAction="#createChar" style="-fx-background-color: #444444;" text="Criar ---&gt;" textFill="WHITE" />
          </children>
       </HBox>
    </children>
