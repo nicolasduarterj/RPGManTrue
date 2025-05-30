@@ -7,10 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" 
-      minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" 
-      xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" 
-      fx:controller="com.nduarte.rpgmantrue.controllers.MainMenuController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nduarte.rpgmantrue.controllers.MainMenuController">
    <children>
       <VBox style="-fx-alignment: center; -fx-background-color: #444444;" HBox.hgrow="ALWAYS">
          <children>
@@ -35,7 +32,7 @@
                   <Insets bottom="20.0" />
                </VBox.margin>
             </Label>
-            <Button mnemonicParsing="false" style="-fx-background-color: #666666;" text="Carregar Personagem" textFill="WHITE" />
+            <Button mnemonicParsing="false" onAction="#selectChar" style="-fx-background-color: #666666;" text="Carregar Personagem" textFill="WHITE" />
          </children>
       </VBox>
    </children>

@@ -63,7 +63,7 @@
       </HBox>
       <HBox alignment="CENTER" layoutX="10.0" layoutY="190.0" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <children>
-            <TextField fx:id="hpInput" onKeyTyped="#processHp" promptText="Nome" style="-fx-background-color: #666666; -fx-text-fill: #d9d9d9;" />
+            <TextField fx:id="hpInput" onKeyTyped="#processHp" promptText="HP Máximo" style="-fx-background-color: #666666; -fx-text-fill: #d9d9d9;" />
             <Label fx:id="hpInputValidadeLabel" text="Inv." textFill="#c40055">
                <HBox.margin>
                   <Insets left="30.0" />

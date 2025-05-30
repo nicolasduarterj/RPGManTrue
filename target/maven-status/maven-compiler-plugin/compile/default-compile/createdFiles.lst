@@ -1,5 +1,7 @@
+com/nduarte/rpgmantrue/controllers/CharMainController.class
 com/nduarte/rpgmantrue/App.class
 com/nduarte/rpgmantrue/database/MainSQLiteConnection.class
+com/nduarte/rpgmantrue/controllers/CharSelectController.class
 com/nduarte/rpgmantrue/controllers/SecondaryController.class
 com/nduarte/rpgmantrue/database/DatabaseInitializationException.class
 com/nduarte/rpgmantrue/controllers/MainMenuController.class
