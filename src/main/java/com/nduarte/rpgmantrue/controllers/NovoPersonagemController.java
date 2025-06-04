@@ -24,10 +24,7 @@ import java.sql.SQLException;
  */
 public class NovoPersonagemController {
 
-    static final String[] classesArr = {"Bárbaro", "Bardo", "Bruxo", "Clérigo", 
-            "Druida", "Feiticeiro", "Guerreiro", "Ladino", "Mago", "Monge", 
-            "Paladino", "Patrulheiro"};
-    static final HashSet<String> classesValidas = new HashSet<>(Arrays.asList(classesArr));
+
     static final Paint corValida = Paint.valueOf("#00c452");
     static final Paint corInvalida = Paint.valueOf("#c40055");
     
@@ -72,7 +69,7 @@ public class NovoPersonagemController {
         String labelStr = String.format("(%d/50)", len);
         nomeInputCounterLabel.setText(labelStr);
        
-        if (len > 0 && len < 51) {
+        if (Personagem.isValidName(nome)) {
             nomeInputCounterLabel.setTextFill(corValida);
             this.nome = nome;
             this.nomeValido = true;
@@ -89,7 +86,7 @@ public class NovoPersonagemController {
         String levelStr = nivelInput.getText();
         try {
             int nivel = Integer.valueOf(levelStr);
-            if (nivel < 1 || nivel > 20) {
+            if (!Personagem.isValidLevel(nivel)) {
                 nivelInputValidadeLabel.setText("Inv.");
                 nivelInputValidadeLabel.setTextFill(corInvalida);
                 this.nivelValido = false;
@@ -110,7 +107,7 @@ public class NovoPersonagemController {
     @FXML
     private void processClassInput(KeyEvent e) {
        String classe = classeInput.getText();
-       if (classesValidas.contains(classe)) {
+       if (Personagem.isValidClass(classe)) {
                 classeInputValidadeLabel.setText("Vál.");
                 classeInputValidadeLabel.setTextFill(corValida);
                 this.classe = classe;
@@ -126,7 +123,7 @@ public class NovoPersonagemController {
     private void processHp(KeyEvent e) {
         try {
             int hp = Integer.valueOf(hpInput.getText());
-            if (hp < 0) throw new IllegalArgumentException("Hp deve ser maior que 0");
+            if (!Personagem.isValidHP(hp)) throw new IllegalArgumentException("Hp deve ser maior que 0");
             
             hpInputValidadeLabel.setText("Vál.");
             hpInputValidadeLabel.setTextFill(corValida);

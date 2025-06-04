@@ -9,6 +9,8 @@ import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import com.nduarte.rpgmantrue.database.MainSQLiteConnection;
 import java.sql.ResultSet;
+import java.util.Arrays;
+import java.util.HashSet;
 
 /**
  * 
@@ -26,6 +28,11 @@ public class Personagem {
     private int pecasPrata;
     private int pecasOuro;
     private int pecasPlatina;
+    
+    static final String[] classesArr = {"Bárbaro", "Bardo", "Bruxo", "Clérigo", 
+        "Druida", "Feiticeiro", "Guerreiro", "Ladino", "Mago", "Monge", 
+        "Paladino", "Patrulheiro"};
+    static final HashSet<String> classesValidas = new HashSet<>(Arrays.asList(classesArr));
     
     private Personagem(int id, String nome, String classe, int nivel, 
             int hp, int hpMax, int hpTemp, int pecasCobre, int pecasPrata, 
@@ -104,5 +111,21 @@ public class Personagem {
                 this.nivel,
                 this.hp,
                 this.hpMax);
+    }
+    
+    public static boolean isValidName(String x) {
+        return x.length() > 0 && x.length() < 51;
+    }
+    
+    public static boolean isValidClass(String x) {
+        return classesValidas.contains(x);
+    }
+    
+    public static boolean isValidLevel(int x) {
+        return x > 0 && x < 21;
+    }
+    
+    public static boolean isValidHP(int hp) {
+        return hp > 0;
     }
 }
