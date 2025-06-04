@@ -9,3 +9,7 @@ Possuirá como funcionalidades:
 - Gestão de magias
 - Gestão de equipamentos
 
+## Uso
+
+1. Copiar o repositório e ir para a pasta obtida
+2. Rodar o comando ``mvn javafx:run``
