@@ -13,7 +13,8 @@ import javafx.fxml.Initializable;
  *
  * @author nduarte
  */
-public class CharMainController implements Initializable {
+public class CharMainController extends CharManagementController 
+        implements Initializable {
 
     /**
      * Initializes the controller class.
