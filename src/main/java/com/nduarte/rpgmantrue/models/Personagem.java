@@ -7,8 +7,10 @@ package com.nduarte.rpgmantrue.models;
 
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
+import java.sql.Statement;
 import com.nduarte.rpgmantrue.database.MainSQLiteConnection;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 
@@ -127,5 +129,27 @@ public class Personagem {
     
     public static boolean isValidHP(int hp) {
         return hp > 0;
+    }
+    
+    public static ArrayList<NameIdRecord> getAllChars() {
+        String sql = "SELECT Nome, Id FROM Personagens;";
+        
+        try {
+            Statement retrieveStmt = MainSQLiteConnection.getConn().createStatement();
+            ResultSet rs = retrieveStmt.executeQuery(sql);
+            
+            ArrayList<NameIdRecord> results = new ArrayList<>();
+            int i = 0;
+            
+            while (rs.next()) {
+                results.add(new NameIdRecord(rs.getString("Nome"), rs.getInt("Id")));
+                i++;
+            }
+            
+            return results;
+        } catch (SQLException e) {
+            System.out.println("SQLEXCEPTION " + e.getMessage());
+            return new ArrayList<NameIdRecord>();
+        }
     }
 }

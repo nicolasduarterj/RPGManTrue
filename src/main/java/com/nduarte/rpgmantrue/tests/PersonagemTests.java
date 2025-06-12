@@ -4,6 +4,9 @@
  */
 package com.nduarte.rpgmantrue.tests;
 
+import com.nduarte.rpgmantrue.database.DatabaseInitializationException;
+import com.nduarte.rpgmantrue.database.MainSQLiteConnection;
+import com.nduarte.rpgmantrue.models.NameIdRecord;
 import com.nduarte.rpgmantrue.models.Personagem;
 /**
  *
@@ -19,6 +22,15 @@ public class PersonagemTests {
             System.out.println(e.getMessage());
             System.out.println(e.getCause().getMessage());
             return false;
+        }
+    }
+    
+    public static void main(String[] args) throws DatabaseInitializationException {
+        MainSQLiteConnection.initConnection();
+        MainSQLiteConnection.initTables();
+        System.out.println("Personagens:");
+        for (NameIdRecord personagem : Personagem.getAllChars()) {
+            System.out.println(personagem);
         }
     }
 }
