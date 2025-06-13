@@ -75,7 +75,7 @@
                <font>
                   <Font size="17.0" />
                </font></Label>
-            <Button layoutX="324.0" layoutY="384.0" mnemonicParsing="false" style="-fx-background-color: #333333;" text="Salvar" textFill="#d9d9d9" underline="true">
+            <Button layoutX="324.0" layoutY="384.0" mnemonicParsing="false" onAction="#saveStats" style="-fx-background-color: #333333;" text="Salvar" textFill="#d9d9d9" underline="true">
                <font>
                   <Font size="16.0" />
                </font></Button>

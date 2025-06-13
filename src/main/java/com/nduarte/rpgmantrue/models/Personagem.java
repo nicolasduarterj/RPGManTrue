@@ -274,7 +274,7 @@ public class Personagem {
     }
     
     public static boolean isValidHP(int hp) {
-        return hp > 0;
+        return hp >= 0;
     }
     
     //----------------------[Estáticos plurais]--------------------------------------//
