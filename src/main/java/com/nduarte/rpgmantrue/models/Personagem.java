@@ -150,6 +150,70 @@ public class Personagem {
     public int getPecasOuro() { return pecasOuro; }
     public int getPecasPlatina() { return pecasPlatina; }
     
+    public void setName(String newName) throws IllegalArgumentException {
+        if (!isValidName(newName)) {
+            throw new IllegalArgumentException("O nome \"" + newName + "\" é invalido.");
+        }
+        
+        this.nome = newName;
+    }
+    
+    public void setClasse(String newClasse) throws IllegalArgumentException {
+        if (!isValidClass(newClasse)) {
+            throw new IllegalArgumentException("A classe " + newClasse + " é inválida.");
+        }
+        
+        this.classe = newClasse;
+    }
+    
+    public void setNivel(int newNivel) {
+        if (!isValidLevel(newNivel)) {
+            throw new IllegalArgumentException("O nível " + String.valueOf(newNivel) + " é inválido.");
+        }
+        
+        this.nivel = newNivel;
+    }
+    
+    public void setHp(int newHp) {
+        if (!isValidHP(newHp)) {
+            throw new IllegalArgumentException("O Hp " + String.valueOf(newHp) + " é inválido.");
+        }
+        
+        this.hp = newHp;
+    }
+    
+    public void setTempHp(int newHp) {
+        if (!isValidHP(newHp)) {
+            throw new IllegalArgumentException("O Hp " + String.valueOf(newHp) + " é inválido.");
+        }
+        
+        this.hpTemp = newHp;
+    }
+    
+    public void setMaxHp(int newHp) {
+        if (!isValidHP(newHp)) {
+            throw new IllegalArgumentException("O Hp " + String.valueOf(newHp) + " é inválido.");
+        }
+        
+        this.hpMax = newHp;
+    }
+    
+    public void setPecasCobre(int newValor) {
+        this.pecasCobre = newValor;
+    }
+    
+    public void setPecasPrata(int newValor) {
+        this.pecasPrata = newValor;
+    }
+    
+    public void setPecasOuro(int newValor) {
+        this.pecasOuro = newValor;
+    }
+    
+    public void setPecasPlatina(int newValor) {
+        this.pecasPlatina = newValor;
+    }
+    
     //--------------------[Overrides]------------------------------------------------//
     
     @Override
