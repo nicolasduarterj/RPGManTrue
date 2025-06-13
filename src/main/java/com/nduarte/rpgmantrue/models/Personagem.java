@@ -214,6 +214,38 @@ public class Personagem {
         this.pecasPlatina = newValor;
     }
     
+    //--------------------[Salvamento]-----------------------------------------------//
+    
+    public void saveBasicStats() throws SQLException {
+        String sql = "INSERT OR REPLACE INTO Personagens("
+                + "Id,"
+                + "Nome,"
+                + "Classe,"
+                + "Nivel,"
+                + "HPMax,"
+                + "HP,"
+                + "HPTemp,"
+                + "PecasCobre,"
+                + "PecasPrata,"
+                + "PecasOuro,"
+                + "PecasPlatina) VALUES (?,?,?,?,?,?,?,?,?,?,?);";
+        
+        PreparedStatement stmt = MainSQLiteConnection.getConn().prepareStatement(sql);
+        stmt.setInt(1, this.id);
+        stmt.setString(2, this.nome);
+        stmt.setString(3, this.classe);
+        stmt.setInt(4, this.nivel);
+        stmt.setInt(5, this.hpMax);
+        stmt.setInt(6, this.hp);
+        stmt.setInt(7, this.hpTemp);
+        stmt.setInt(8, this.pecasCobre);
+        stmt.setInt(9, this.pecasPrata);
+        stmt.setInt(10, this.pecasOuro);
+        stmt.setInt(11, this.pecasPlatina);
+            
+        stmt.executeUpdate();
+    }
+    
     //--------------------[Overrides]------------------------------------------------//
     
     @Override
