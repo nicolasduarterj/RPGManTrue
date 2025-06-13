@@ -23,7 +23,7 @@
       </HBox>
    </top>
    <center>
-      <ListView editable="true" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222222;" BorderPane.alignment="CENTER" />
+      <ListView fx:id="charsList" editable="true" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222222;" BorderPane.alignment="CENTER" />
    </center>
    <bottom>
       <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
@@ -32,15 +32,16 @@
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
                <children>
-                  <Button alignment="TOP_CENTER" mnemonicParsing="false" style="-fx-background-color: #444444;" text="&lt;--- Cancelar" textFill="#d9d9d9" />
+                  <Button alignment="TOP_CENTER" mnemonicParsing="false" onAction="#mainMenu" style="-fx-background-color: #444444;" text="&lt;--- Cancelar" textFill="#d9d9d9" />
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+            <HBox alignment="CENTER" prefHeight="48.0" prefWidth="294.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
                   <Button mnemonicParsing="false" onAction="#charMain" style="-fx-background-color: #444444;" text="Selecionar ---&gt;" textFill="#d9d9d9" />
                </children>

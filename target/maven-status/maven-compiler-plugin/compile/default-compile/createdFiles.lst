@@ -1,6 +1,7 @@
 com/nduarte/rpgmantrue/controllers/CharMainController.class
 com/nduarte/rpgmantrue/App.class
 com/nduarte/rpgmantrue/database/MainSQLiteConnection.class
+com/nduarte/rpgmantrue/models/SelectedCharacter.class
 com/nduarte/rpgmantrue/controllers/CharSelectController.class
 com/nduarte/rpgmantrue/controllers/CharMagicController.class
 com/nduarte/rpgmantrue/controllers/CharMoneyController.class

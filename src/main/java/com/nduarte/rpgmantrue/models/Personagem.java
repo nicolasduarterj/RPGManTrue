@@ -104,6 +104,35 @@ public class Personagem {
         }
     }
     
+    public static Personagem fromId(int id) {
+        String sql = "SELECT * FROM Personagens WHERE Id = ?;";
+        
+        try {
+            PreparedStatement stmtFind = MainSQLiteConnection.getConn()
+                    .prepareStatement(sql);
+            
+            stmtFind.setInt(1, id);
+            
+            ResultSet rs = stmtFind.executeQuery();
+            
+            return new Personagem(
+                    rs.getInt("Id"),
+                    rs.getString("Nome"),
+                    rs.getString("Classe"),
+                    rs.getInt("Nivel"),
+                    rs.getInt("HP"),
+                    rs.getInt("HPMax"),
+                    rs.getInt("HPTemp"),
+                    rs.getInt("PecasCobre"),
+                    rs.getInt("PecasPrata"),
+                    rs.getInt("PecasOuro"),
+                    rs.getInt("PecasPlatina")
+            );
+        } catch (SQLException e) {
+            return null;
+        }
+    }
+    
     @Override
     public String toString() {
         return String.format("Id:%d\nNome:%s\nClasse:%s\nNivel:%d\nHP:%d\nHPMax:%d\n",
