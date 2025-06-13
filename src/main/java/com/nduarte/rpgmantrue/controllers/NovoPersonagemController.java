@@ -16,6 +16,7 @@ import java.io.IOException;
 import javafx.scene.control.Alert;
 import com.nduarte.rpgmantrue.models.Personagem;
 import java.sql.SQLException;
+import javafx.scene.control.ComboBox;
 
 /**
  * FXML Controller class
@@ -34,7 +35,6 @@ public class NovoPersonagemController {
     private int hpMax;
     
     private boolean nomeValido = false;
-    private boolean classeValida = false;
     private boolean nivelValido = false;
     private boolean hpMaxValido = false;
     
@@ -51,7 +51,7 @@ public class NovoPersonagemController {
     private Label nivelInputValidadeLabel;
     
     @FXML
-    private TextField classeInput;
+    private ComboBox classeInput;
     
     @FXML
     private Label classeInputValidadeLabel;
@@ -105,21 +105,6 @@ public class NovoPersonagemController {
     }
     
     @FXML
-    private void processClassInput(KeyEvent e) {
-       String classe = classeInput.getText();
-       if (Personagem.isValidClass(classe)) {
-                classeInputValidadeLabel.setText("Vál.");
-                classeInputValidadeLabel.setTextFill(corValida);
-                this.classe = classe;
-                this.classeValida = true;
-       } else {
-                classeInputValidadeLabel.setText("Inv.");
-                classeInputValidadeLabel.setTextFill(corInvalida);
-                this.classeValida = false;
-       }
-    }
-    
-    @FXML
     private void processHp(KeyEvent e) {
         try {
             int hp = Integer.valueOf(hpInput.getText());
@@ -144,7 +129,7 @@ public class NovoPersonagemController {
     @FXML
     private void createChar() {
         boolean validade = this.nomeValido && this.nivelValido 
-                && this.hpMaxValido && this.classeValida;
+                && this.hpMaxValido;
         
         if (!validade) {
             Alert a = new Alert(Alert.AlertType.ERROR);
@@ -154,6 +139,8 @@ public class NovoPersonagemController {
             return;
         }
         
+        this.classe = (String) classeInput.getValue();
+        
         try {
             Personagem novoChar = Personagem.createChar(this.nome, 
                     this.classe, this.nivel, this.hpMax);
@@ -161,6 +148,7 @@ public class NovoPersonagemController {
             a.setHeaderText("Personagem criado com sucesso.");
             a.setContentText(this.nome + " foi criado.");
             a.showAndWait();
+            App.setRoot("CharSelect");
         } catch (IllegalArgumentException e) {
             if (e.getCause().getMessage().toLowerCase().contains("unique")) {
                 Alert a = new Alert(Alert.AlertType.ERROR);
@@ -169,11 +157,18 @@ public class NovoPersonagemController {
                 a.showAndWait();
             }
             System.out.println(e.getCause().getMessage());
-        } catch (SQLException e) {
+        } catch (Exception e) {
             Alert a = new Alert(Alert.AlertType.ERROR);
             a.setHeaderText("Ocorreu um erro inesperado.");
             a.setContentText(e.getMessage());
             a.showAndWait();
         }
+    }
+    
+    @FXML
+    public void initialize() {
+        classeInput.getItems().removeAll();
+        classeInput.getItems().addAll(Personagem.classesValidas);
+        classeInput.getSelectionModel().select("Guerreiro");
     }
 }

@@ -31,10 +31,10 @@ public class Personagem {
     private int pecasOuro;
     private int pecasPlatina;
     
-    static final String[] classesArr = {"Bárbaro", "Bardo", "Bruxo", "Clérigo", 
+    public static final String[] classesArr = {"Bárbaro", "Bardo", "Bruxo", "Clérigo", 
         "Druida", "Feiticeiro", "Guerreiro", "Ladino", "Mago", "Monge", 
         "Paladino", "Patrulheiro"};
-    static final HashSet<String> classesValidas = new HashSet<>(Arrays.asList(classesArr));
+    public static final HashSet<String> classesValidas = new HashSet<>(Arrays.asList(classesArr));
     
     private Personagem(int id, String nome, String classe, int nivel, 
             int hp, int hpMax, int hpTemp, int pecasCobre, int pecasPrata, 
