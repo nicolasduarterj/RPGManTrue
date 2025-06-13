@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -54,7 +55,7 @@
                <font>
                   <Font size="16.0" />
                </font></Label>
-            <TextField layoutX="14.0" layoutY="82.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[Nome]">
+            <TextField fx:id="nomeInput" layoutX="14.0" layoutY="82.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[Nome]">
                <font>
                   <Font size="16.0" />
                </font></TextField>
@@ -74,34 +75,36 @@
                <font>
                   <Font size="17.0" />
                </font></Label>
-            <Label layoutX="318.0" layoutY="187.0" text="Status: OK" textFill="#00c452">
-               <font>
-                  <Font size="16.0" />
-               </font></Label>
             <Button layoutX="324.0" layoutY="384.0" mnemonicParsing="false" style="-fx-background-color: #333333;" text="Salvar" textFill="#d9d9d9" underline="true">
                <font>
                   <Font size="16.0" />
                </font></Button>
-            <TextField layoutX="14.0" layoutY="242.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[Nivel]">
+            <TextField fx:id="nivelInput" layoutX="14.0" layoutY="242.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[Nivel]">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
-            <TextField layoutX="14.0" layoutY="384.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[HP]">
+            <TextField fx:id="hpInput" layoutX="14.0" layoutY="384.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[HP]">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
-            <TextField layoutX="498.0" layoutY="82.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[Classe]">
+            <TextField fx:id="hpMaxInput" layoutX="498.0" layoutY="241.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[HP maximo]">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
-            <TextField layoutX="498.0" layoutY="242.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[HP maximo]">
+            <TextField fx:id="hpTempInput" layoutX="495.0" layoutY="384.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[HP]">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
+            <Label layoutX="506.0" layoutY="324.0" text="HP Temporário" textFill="#d9d9d9" underline="true">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="classeInput" layoutX="498.0" layoutY="85.0" prefWidth="150.0" />
          </children>
       </AnchorPane>
    </center>

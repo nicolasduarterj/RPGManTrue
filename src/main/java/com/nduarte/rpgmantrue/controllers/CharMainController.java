@@ -4,24 +4,46 @@
  */
 package com.nduarte.rpgmantrue.controllers;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
-
+import com.nduarte.rpgmantrue.models.Personagem;
+import com.nduarte.rpgmantrue.models.SelectedCharacter;
+import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 /**
  * FXML Controller class
  *
  * @author nduarte
  */
-public class CharMainController extends CharManagementController 
-        implements Initializable {
+public class CharMainController extends CharManagementController {
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    @FXML
+    private TextField nomeInput;
+    
+    @FXML
+    private ComboBox classeInput;
+    
+    @FXML
+    private TextField nivelInput;
+    
+    @FXML
+    private TextField hpMaxInput;
+    
+    @FXML
+    private TextField hpInput;
+    
+    @FXML
+    private TextField hpTempInput;
+
+    public void initialize() {
+        nomeInput.setText(SelectedCharacter.get().getNome());
+        classeInput.getItems().removeAll();
+        classeInput.getItems().addAll(Personagem.classesValidas);
+        classeInput.getSelectionModel().select(SelectedCharacter.get().getClasse());
+        nivelInput.setText(String.valueOf(SelectedCharacter.get().getNivel()));
+        hpMaxInput.setText(String.valueOf(SelectedCharacter.get().getHPMax()));
+        hpInput.setText(String.valueOf(SelectedCharacter.get().getHP()));
+        hpTempInput.setText(String.valueOf(SelectedCharacter.get().getHPTemp()));
+        
     }    
     
 }

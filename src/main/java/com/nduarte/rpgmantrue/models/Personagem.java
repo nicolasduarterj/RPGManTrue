@@ -19,6 +19,7 @@ import java.util.HashSet;
  * @author nduarte
  */
 public class Personagem {
+    
     private int id;
     private String nome;
     private String classe;
@@ -35,6 +36,8 @@ public class Personagem {
         "Druida", "Feiticeiro", "Guerreiro", "Ladino", "Mago", "Monge", 
         "Paladino", "Patrulheiro"};
     public static final HashSet<String> classesValidas = new HashSet<>(Arrays.asList(classesArr));
+    
+    //----------------[Construtores e factories]-----------------------------//
     
     private Personagem(int id, String nome, String classe, int nivel, 
             int hp, int hpMax, int hpTemp, int pecasCobre, int pecasPrata, 
@@ -133,6 +136,22 @@ public class Personagem {
         }
     }
     
+    //--------------------[Getters e setters]---------------------------------------//
+    
+    public int getId() { return id; }
+    public String getNome() { return nome; }
+    public String getClasse() { return classe; }
+    public int getNivel() { return nivel; }
+    public int getHP() { return hp; }
+    public int getHPMax() { return hpMax; }
+    public int getHPTemp() { return hpTemp; }
+    public int getPecasCobre() { return pecasCobre; }
+    public int getPecasPrata() { return pecasPrata; }
+    public int getPecasOuro() { return pecasOuro; }
+    public int getPecasPlatina() { return pecasPlatina; }
+    
+    //--------------------[Overrides]------------------------------------------------//
+    
     @Override
     public String toString() {
         return String.format("Id:%d\nNome:%s\nClasse:%s\nNivel:%d\nHP:%d\nHPMax:%d\n",
@@ -143,6 +162,8 @@ public class Personagem {
                 this.hp,
                 this.hpMax);
     }
+    
+    //--------------------[Validação]-------------------------------------------------//
     
     public static boolean isValidName(String x) {
         return x.length() > 0 && x.length() < 51;
@@ -159,6 +180,8 @@ public class Personagem {
     public static boolean isValidHP(int hp) {
         return hp > 0;
     }
+    
+    //----------------------[Estáticos plurais]--------------------------------------//
     
     public static ArrayList<NameIdRecord> getAllChars() {
         String sql = "SELECT Nome, Id FROM Personagens;";
