@@ -31,6 +31,7 @@ public class Personagem {
     private int pecasPrata;
     private int pecasOuro;
     private int pecasPlatina;
+    private InfoMagia infoMagica;
     
     public static final String[] classesArr = {"Bárbaro", "Bardo", "Bruxo", "Clérigo", 
         "Druida", "Feiticeiro", "Guerreiro", "Ladino", "Mago", "Monge", 
@@ -58,6 +59,8 @@ public class Personagem {
     
     public static Personagem createChar(String nome, String classe, int nivel, 
             int hpMax) throws IllegalArgumentException, SQLException {
+        
+        Personagem charCriado;
         
         String createCharSQL = "INSERT INTO Personagens(Nome, Classe, Nivel, "
                 + "HPMax, HP, HPTemp, PecasCobre, PecasPrata, PecasOuro, PecasPlatina) "
@@ -89,7 +92,7 @@ public class Personagem {
             
             ResultSet rs = stmtFind.executeQuery();
             
-            return new Personagem(
+            charCriado = new Personagem(
                     rs.getInt("Id"),
                     rs.getString("Nome"),
                     rs.getString("Classe"),
@@ -102,6 +105,9 @@ public class Personagem {
                     rs.getInt("PecasOuro"),
                     rs.getInt("PecasPlatina")
             );
+            
+            charCriado.setInfoMagica(InfoMagia.initialize(charCriado.getId()));
+            return charCriado;
         } catch(SQLException e) {
             throw e;
         }
@@ -149,6 +155,7 @@ public class Personagem {
     public int getPecasPrata() { return pecasPrata; }
     public int getPecasOuro() { return pecasOuro; }
     public int getPecasPlatina() { return pecasPlatina; }
+    public InfoMagia getInfoMagica() { return infoMagica; }
     
     public void setName(String newName) throws IllegalArgumentException {
         if (!isValidName(newName)) {
@@ -212,6 +219,10 @@ public class Personagem {
     
     public void setPecasPlatina(int newValor) {
         this.pecasPlatina = newValor;
+    }
+    
+    public void setInfoMagica(InfoMagia newMagica) {
+        this.infoMagica = newMagica;
     }
     
     //--------------------[Salvamento]-----------------------------------------------//

@@ -21,4 +21,5 @@ com/nduarte/rpgmantrue/controllers/NovoPersonagemController.class
 com/nduarte/rpgmantrue/controllers/CharConsumeItemController.class
 com/nduarte/rpgmantrue/controllers/CharEquipEquipmentController.class
 com/nduarte/rpgmantrue/controllers/CharCreateItemController.class
+com/nduarte/rpgmantrue/models/InfoMagia.class
 com/nduarte/rpgmantrue/controllers/CharMagicMaxController.class
