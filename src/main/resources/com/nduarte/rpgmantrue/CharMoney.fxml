@@ -54,7 +54,7 @@
                <font>
                   <Font size="16.0" />
                </font></Label>
-            <TextField layoutX="14.0" layoutY="82.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[PC]">
+            <TextField fx:id="pecasCobreInput" layoutX="14.0" layoutY="82.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[PC]">
                <font>
                   <Font size="16.0" />
                </font></TextField>
@@ -70,25 +70,21 @@
                <font>
                   <Font size="16.0" />
                </font></Label>
-            <Label layoutX="318.0" layoutY="187.0" text="Status: OK" textFill="#00c452">
-               <font>
-                  <Font size="16.0" />
-               </font></Label>
-            <Button layoutX="324.0" layoutY="366.0" mnemonicParsing="false" style="-fx-background-color: #333333;" text="Salvar" textFill="#d9d9d9" underline="true">
+            <Button layoutX="324.0" layoutY="366.0" mnemonicParsing="false" onAction="#saveMoneyStats" style="-fx-background-color: #333333;" text="Salvar" textFill="#d9d9d9" underline="true">
                <font>
                   <Font size="16.0" />
                </font></Button>
-            <TextField layoutX="14.0" layoutY="242.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[PO]">
+            <TextField fx:id="pecasOuroInput" layoutX="14.0" layoutY="242.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[PO]">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
-            <TextField layoutX="498.0" layoutY="82.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[PP]">
+            <TextField fx:id="pecasPrataInput" layoutX="498.0" layoutY="82.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[PP]">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
-            <TextField layoutX="498.0" layoutY="242.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[PL]">
+            <TextField fx:id="pecasPlatinaInput" layoutX="498.0" layoutY="242.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[PL]">
                <font>
                   <Font size="16.0" />
                </font>
