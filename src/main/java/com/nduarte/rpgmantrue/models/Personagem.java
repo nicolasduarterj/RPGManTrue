@@ -124,7 +124,7 @@ public class Personagem {
             
             ResultSet rs = stmtFind.executeQuery();
             
-            return new Personagem(
+            Personagem charCriado = new Personagem(
                     rs.getInt("Id"),
                     rs.getString("Nome"),
                     rs.getString("Classe"),
@@ -137,7 +137,11 @@ public class Personagem {
                     rs.getInt("PecasOuro"),
                     rs.getInt("PecasPlatina")
             );
+            
+            charCriado.setInfoMagica(InfoMagia.fromId(id));
+            return charCriado;
         } catch (SQLException e) {
+            System.out.println(e.getMessage());
             return null;
         }
     }

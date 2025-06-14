@@ -6,6 +6,7 @@ package com.nduarte.rpgmantrue.models;
 
 import com.nduarte.rpgmantrue.database.MainSQLiteConnection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
@@ -13,6 +14,8 @@ public class InfoMagia {
     private int donoId;
     private int[] magiasMax;
     private int[] magiasAtuais;
+    
+    //--------------------[Construtores e factories]--------------------------//
     
     private InfoMagia(int[] maxUsos, int[] currentUsos, int donoId) {
         this.magiasMax = maxUsos;
@@ -65,4 +68,30 @@ public class InfoMagia {
         
         return new InfoMagia(maxUsos, currentUsos, charId);
     }
+    
+    public static InfoMagia fromId(int charId) throws SQLException {
+        int[] maxUsos = new int[9];
+        int[] currentUsos = new int[9];
+        
+        String sqlMax = "SELECT * FROM MaxUsosMagia WHERE Id_Personagem = ?;";
+        
+        PreparedStatement stmtMax = MainSQLiteConnection.getConn().prepareStatement(sqlMax);
+        stmtMax.setInt(1, charId);
+        ResultSet rsMax = stmtMax.executeQuery();
+        for (int i = 1; i <= 9; i++) {
+            maxUsos[i - 1] = rsMax.getInt(String.format("Nivel%d", i));
+        }
+        
+        String sqlCurrent = "SELECT * FROM UsosRestantesMagia WHERE Id_Personagem = ?;";
+        PreparedStatement stmtCurrent = MainSQLiteConnection.getConn().prepareStatement(sqlCurrent);
+        stmtCurrent.setInt(1, charId);
+        ResultSet rsCurrent = stmtCurrent.executeQuery();
+        for (int i = 1; i <= 9; i++) {
+            currentUsos[i - 1] = rsCurrent.getInt(String.format("Nivel%d", i));
+        }
+        
+        return new InfoMagia(maxUsos, currentUsos, charId);
+    }
+    
+
 }
