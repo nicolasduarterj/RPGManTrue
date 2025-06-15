@@ -124,6 +124,15 @@ public class InfoMagia {
         magiasAtuais[nivel - 1]--;
     }
     
+    public void setUsosRestantesPorNivel(int nivel, int x) throws IllegalArgumentException {
+        if (nivel < 1 || nivel > 9) throw new IllegalArgumentException("Niveis são de 1 a 9.");
+        if (x < 0) throw new IllegalArgumentException("Valores restantes de magia devem ser positivos.");
+        if (x > getMaxUsosPorNivel(nivel)) throw new IllegalArgumentException("Valores restantes devem ser menores ou iguais aos seus respectivos máximos");
+        
+        
+        magiasAtuais[nivel - 1] = x;
+    }
+    
     public void saveMaxStats() {
         String sql = "INSERT OR REPLACE INTO MaxUsosMagia("
                 + "Id_Personagem,"
@@ -142,6 +151,31 @@ public class InfoMagia {
             stmt.setInt(1, donoId);
             for (int i = 2; i <= 10; i++) {
                 stmt.setInt(i, getMaxUsosPorNivel(i - 1));
+            }
+            stmt.execute();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void saveRemainingStats() {
+        String sql = "INSERT OR REPLACE INTO UsosRestantesMagia("
+                + "Id_Personagem,"
+                + "Nivel1,"
+                + "Nivel2,"
+                + "Nivel3,"
+                + "Nivel4,"
+                + "Nivel5,"
+                + "Nivel6,"
+                + "Nivel7,"
+                + "Nivel8,"
+                + "Nivel9) VALUES (?,?,?,?,?,?,?,?,?,?);";
+        
+        try {
+            PreparedStatement stmt = MainSQLiteConnection.getConn().prepareStatement(sql);
+            stmt.setInt(1, donoId);
+            for (int i = 2; i <= 10; i++) {
+                stmt.setInt(i, getUsosRestantesPorNivel(i - 1));
             }
             stmt.execute();
         } catch (SQLException e) {

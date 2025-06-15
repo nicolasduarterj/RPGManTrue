@@ -54,7 +54,7 @@
                <font>
                   <Font size="16.0" />
                </font></Label>
-            <TextField layoutX="14.0" layoutY="82.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[1]">
+            <TextField fx:id="nivel1Input" layoutX="14.0" layoutY="82.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[1]">
                <font>
                   <Font size="16.0" />
                </font></TextField>
@@ -74,35 +74,31 @@
                <font>
                   <Font size="17.0" />
                </font></Label>
-            <Label layoutX="78.0" layoutY="461.0" text="Status: OK" textFill="#00c452">
-               <font>
-                  <Font size="16.0" />
-               </font></Label>
-            <Button layoutX="325.0" layoutY="456.0" mnemonicParsing="false" style="-fx-background-color: #333333;" text="Salvar" textFill="#d9d9d9" underline="true">
+            <Button layoutX="325.0" layoutY="456.0" mnemonicParsing="false" onAction="#saveRemainingStats" style="-fx-background-color: #333333;" text="Salvar" textFill="#d9d9d9" underline="true">
                <font>
                   <Font size="16.0" />
                </font></Button>
-            <TextField layoutX="14.0" layoutY="242.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[4]">
+            <TextField fx:id="nivel4Input" layoutX="14.0" layoutY="242.0" promptText="nivel4Input" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[4]">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
-            <TextField layoutX="14.0" layoutY="384.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[7]">
+            <TextField fx:id="nivel7Input" layoutX="14.0" layoutY="384.0" promptText="nivel7Input" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[7]">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
-            <TextField layoutX="498.0" layoutY="82.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[3]">
+            <TextField fx:id="nivel3Input" layoutX="498.0" layoutY="82.0" promptText="nivel3Input" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[3]">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
-            <TextField layoutX="498.0" layoutY="242.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[6]">
+            <TextField fx:id="nivel6Input" layoutX="498.0" layoutY="242.0" promptText="nivel6Input" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[6]">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
-            <TextField layoutX="256.0" layoutY="82.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[2]">
+            <TextField fx:id="nivel2Input" layoutX="256.0" layoutY="82.0" promptText="nivel2Input" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[2]">
                <font>
                   <Font size="16.0" />
                </font>
@@ -112,17 +108,17 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField layoutX="256.0" layoutY="242.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[5]">
+            <TextField fx:id="nivel5Input" layoutX="256.0" layoutY="242.0" promptText="nivel5Input" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[5]">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
-            <TextField layoutX="256.0" layoutY="384.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[8]">
+            <TextField fx:id="nivel8Input" layoutX="256.0" layoutY="384.0" promptText="nivel8Input" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[8]">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
-            <TextField layoutX="498.0" layoutY="384.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[9]">
+            <TextField fx:id="nivel9Input" layoutX="498.0" layoutY="384.0" promptText="nivel9Input" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[9]">
                <font>
                   <Font size="16.0" />
                </font>
