@@ -32,6 +32,7 @@ public class Personagem {
     private int pecasOuro;
     private int pecasPlatina;
     private InfoMagia infoMagica;
+    private ArrayList<ItemConsumivel> inventario;
     
     public static final String[] classesArr = {"Bárbaro", "Bardo", "Bruxo", "Clérigo", 
         "Druida", "Feiticeiro", "Guerreiro", "Ladino", "Mago", "Monge", 
@@ -139,6 +140,7 @@ public class Personagem {
             );
             
             charCriado.setInfoMagica(InfoMagia.fromId(id));
+            charCriado.refreshItens();
             return charCriado;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -160,6 +162,7 @@ public class Personagem {
     public int getPecasOuro() { return pecasOuro; }
     public int getPecasPlatina() { return pecasPlatina; }
     public InfoMagia getInfoMagica() { return infoMagica; }
+    public ArrayList<ItemConsumivel> getInventario() { return inventario; }
     
     public void setName(String newName) throws IllegalArgumentException {
         if (!isValidName(newName)) {
@@ -227,6 +230,10 @@ public class Personagem {
     
     public void setInfoMagica(InfoMagia newMagica) {
         this.infoMagica = newMagica;
+    }
+    
+    public void refreshItens() {
+        this.inventario = ItemConsumivel.getAllByDonoId(this.id);
     }
     
     //--------------------[Salvamento]-----------------------------------------------//

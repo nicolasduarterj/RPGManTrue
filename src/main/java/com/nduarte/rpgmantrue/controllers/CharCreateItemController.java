@@ -34,6 +34,7 @@ public class CharCreateItemController extends CharManagementController {
                     nome, 
                     quantidade);
             
+            SelectedCharacter.get().refreshItens();
             Alert ok = new Alert(Alert.AlertType.INFORMATION);
             ok.setHeaderText("Salvo!");
             ok.setContentText("Item " + nome + " foi salvo com sucesso.");

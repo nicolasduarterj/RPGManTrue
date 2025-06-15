@@ -96,10 +96,45 @@ public class ItemConsumivel {
         }
     }
     
+    //------------------[Getters e setters]-----------------------------//
+    
+    public int getId() { return id; }
+    public int getDonoId() { return donoId; }
+    public String getNome() { return nome; }
+    public double getQuantidade() { return quantidade; }
+    
+    public double spend(double x) throws IllegalArgumentException {
+        if (quantidade - x < 0) throw new IllegalArgumentException("Não há quantidade o suficiente.");
+        
+        quantidade = quantidade - x;
+        return quantidade;
+    }
+    
+    public double add(double x) {
+        quantidade = quantidade + x;
+        return quantidade;
+    }
+    
     //------------------[Overrides]-------------------------------------//
     
     @Override
     public String toString() {
-        return String.format("%s (%f disponíveis)", this.nome, this.quantidade);
+        return String.format("%s (%.2f disponíveis)", this.nome, this.quantidade);
+    }
+    
+    //-------------------[Salvamento]----------------------------------//
+    public void save() {
+        String sql = "INSERT OR REPLACE INTO ItensConsumiveis(Id, Dono, Nome, Quantidade) VALUES (?, ?, ?, ?);";
+        try {
+            PreparedStatement stmt = MainSQLiteConnection.getConn().prepareStatement(sql);
+            stmt.setInt(1, id);
+            stmt.setInt(2, donoId);
+            stmt.setString(3, nome);
+            stmt.setDouble(4, quantidade);
+            
+            stmt.execute();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
