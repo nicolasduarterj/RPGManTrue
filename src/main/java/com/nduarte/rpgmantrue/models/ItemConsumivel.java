@@ -31,7 +31,7 @@ public class ItemConsumivel {
     
     public static ItemConsumivel initialize(int donoId, String nome, double quantidade) 
     throws SQLException, IllegalArgumentException {
-        if (quantidade < 0) throw new IllegalArgumentException("Quantidade deve ser maior que 0");
+        if (quantidade < 0) throw new IllegalArgumentException("Quantidade deve ser maior que 0.");
         
         String sqlCreate = "INSERT INTO ItensConsumiveis(Nome, Dono, Quantidade) VALUES (?, ?, ?);";
         PreparedStatement stmtCreate = MainSQLiteConnection.getConn().prepareStatement(sqlCreate);
