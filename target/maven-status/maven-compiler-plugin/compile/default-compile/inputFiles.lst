@@ -18,6 +18,7 @@
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/database/DatabaseInitializationException.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/controllers/CharCreateItemController.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/controllers/CharEquipEquipmentController.java
+/home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/models/ItemConsumivel.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/controllers/CharConsumeItemController.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/models/Personagem.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/controllers/SecondaryController.java

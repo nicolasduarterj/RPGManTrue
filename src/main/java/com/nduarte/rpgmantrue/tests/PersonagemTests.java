@@ -6,8 +6,10 @@ package com.nduarte.rpgmantrue.tests;
 
 import com.nduarte.rpgmantrue.database.DatabaseInitializationException;
 import com.nduarte.rpgmantrue.database.MainSQLiteConnection;
+import com.nduarte.rpgmantrue.models.ItemConsumivel;
 import com.nduarte.rpgmantrue.models.NameIdRecord;
 import com.nduarte.rpgmantrue.models.Personagem;
+import java.util.ArrayList;
 import java.util.Random;
 /**
  *
@@ -29,16 +31,10 @@ public class PersonagemTests {
     public static void main(String[] args) throws Exception {
         MainSQLiteConnection.initConnection();
         MainSQLiteConnection.initTables();
-        System.out.println("Personagens:");
-        for (NameIdRecord personagem : Personagem.getAllChars()) {
-            System.out.println(personagem);
-        }
         
-        Personagem per = Personagem.fromId(1);
-        System.out.println("Nivel antigo:" + String.valueOf(per.getNivel()));
-        Random r = new Random();
-        per.setNivel(r.nextInt(20));
-        System.out.println("Nivel novo:" + String.valueOf(per.getNivel()));
-        per.saveBasicStats();
+        ItemConsumivel.initialize(1, "CDE", 3);
+        for (ItemConsumivel item : ItemConsumivel.getAllByDonoId(1)) {
+            System.out.println(item);
+        }
     }
 }

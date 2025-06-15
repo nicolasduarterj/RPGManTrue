@@ -17,6 +17,7 @@ com/nduarte/rpgmantrue/controllers/CharUseAttackController.class
 com/nduarte/rpgmantrue/database/DatabaseInitializationException.class
 com/nduarte/rpgmantrue/controllers/MainMenuController.class
 com/nduarte/rpgmantrue/models/NameIdRecord.class
+com/nduarte/rpgmantrue/models/ItemConsumivel.class
 com/nduarte/rpgmantrue/controllers/NovoPersonagemController.class
 com/nduarte/rpgmantrue/controllers/CharConsumeItemController.class
 com/nduarte/rpgmantrue/controllers/CharEquipEquipmentController.class
