@@ -69,6 +69,7 @@ public abstract class MainSQLiteConnection {
                     + "Nome VARCHAR(50) NOT NULL,"
                     + "Dono INTEGER NOT NULL,"
                     + "EstaEquipado BOOLEAN NOT NULL,"
+                    + "UNIQUE(Nome,Dono),"
                     + "FOREIGN KEY(Dono) REFERENCES Personagens(Id));";
             
             Statement stmtEquipamentos = dbConn.createStatement();

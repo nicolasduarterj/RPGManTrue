@@ -33,6 +33,7 @@ public class Personagem {
     private int pecasPlatina;
     private InfoMagia infoMagica;
     private ArrayList<ItemConsumivel> inventario;
+    private ArrayList<Equipamento> equipamentos;
     
     public static final String[] classesArr = {"Bárbaro", "Bardo", "Bruxo", "Clérigo", 
         "Druida", "Feiticeiro", "Guerreiro", "Ladino", "Mago", "Monge", 
@@ -163,6 +164,7 @@ public class Personagem {
     public int getPecasPlatina() { return pecasPlatina; }
     public InfoMagia getInfoMagica() { return infoMagica; }
     public ArrayList<ItemConsumivel> getInventario() { return inventario; }
+    public ArrayList<Equipamento> getEquipamentos() { return equipamentos; }
     
     public void setName(String newName) throws IllegalArgumentException {
         if (!isValidName(newName)) {
@@ -234,6 +236,10 @@ public class Personagem {
     
     public void refreshItens() {
         this.inventario = ItemConsumivel.getAllByDonoId(this.id);
+    }
+    
+    public void refreshEquipamentos() {
+        this.equipamentos = Equipamento.getAllByDonoId(this.id);
     }
     
     //--------------------[Salvamento]-----------------------------------------------//

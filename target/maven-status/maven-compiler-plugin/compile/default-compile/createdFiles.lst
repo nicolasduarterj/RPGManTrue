@@ -13,6 +13,7 @@ com/nduarte/rpgmantrue/controllers/PrimaryController.class
 module-info.class
 com/nduarte/rpgmantrue/controllers/CharCreateEquipController.class
 com/nduarte/rpgmantrue/controllers/CharCreateAttackController.class
+com/nduarte/rpgmantrue/models/Equipamento.class
 com/nduarte/rpgmantrue/controllers/CharUseAttackController.class
 com/nduarte/rpgmantrue/database/DatabaseInitializationException.class
 com/nduarte/rpgmantrue/controllers/MainMenuController.class
