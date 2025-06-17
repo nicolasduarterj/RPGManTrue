@@ -89,4 +89,33 @@ public class Equipamento {
     }
     
     public String getNome() { return nome; }
+    public int getId() { return id; }
+    public int getDonoId() { return donoId; }
+    public boolean getEstaEquipado() { return estaEquipado; }
+    
+    public void toggleEstaEquipado() { estaEquipado = !estaEquipado; }
+    
+    public void save() {
+        try {
+            String sql = "INSERT OR REPLACE INTO Equipamentos(Id, Dono, Nome, EstaEquipado) VALUES "
+                    + "(?, ?, ?, ?);";
+            
+            PreparedStatement stmt = MainSQLiteConnection.getConn().prepareStatement(sql);
+            stmt.setInt(1, id);
+            stmt.setInt(2, donoId);
+            stmt.setString(3, nome);
+            stmt.setBoolean(4, estaEquipado);
+            stmt.execute();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    @Override
+    public String toString() {
+        return String.format("%s (%s)",
+                    this.nome,
+                    this.estaEquipado ? "Equipado" : "Não equipado"
+                );
+    }
 }

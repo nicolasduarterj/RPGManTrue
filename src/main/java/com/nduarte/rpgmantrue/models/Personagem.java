@@ -142,6 +142,7 @@ public class Personagem {
             
             charCriado.setInfoMagica(InfoMagia.fromId(id));
             charCriado.refreshItens();
+            charCriado.refreshEquipamentos();
             return charCriado;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
