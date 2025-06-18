@@ -6,6 +6,7 @@ package com.nduarte.rpgmantrue.tests;
 
 import com.nduarte.rpgmantrue.database.DatabaseInitializationException;
 import com.nduarte.rpgmantrue.database.MainSQLiteConnection;
+import com.nduarte.rpgmantrue.models.Ataque;
 import com.nduarte.rpgmantrue.models.Equipamento;
 import com.nduarte.rpgmantrue.models.ItemConsumivel;
 import com.nduarte.rpgmantrue.models.NameIdRecord;
@@ -34,6 +35,7 @@ public class PersonagemTests {
         MainSQLiteConnection.initTables();
         
         Personagem fonteTeste = Personagem.fromId(1);
-        Equipamento teste = Equipamento.initialize(fonteTeste.getId(), "Escudo");
+        Ataque testeAtaque = Ataque.fromId(1);
+        System.out.println(testeAtaque);
     }
 }

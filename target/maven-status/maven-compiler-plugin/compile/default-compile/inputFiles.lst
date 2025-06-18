@@ -22,6 +22,7 @@
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/models/Equipamento.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/controllers/CharConsumeItemController.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/models/Personagem.java
+/home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/models/Ataque.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/controllers/SecondaryController.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/models/SelectedCharacter.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/controllers/CharManagementController.java
