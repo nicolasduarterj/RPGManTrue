@@ -7,6 +7,7 @@ import com.nduarte.rpgmantrue.database.MainSQLiteConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -23,6 +24,7 @@ public class Ataque {
     private int tipoDado;
     private int numeroDado;
     private int bonus;
+    private ArrayList<AtaqueConsumo> dependItens;
     
     private Ataque(int id, String nome, int donoId, int nivelMagico, Equipamento dependEquip,
     int tipoDado, int numeroDado, int bonus) {
@@ -108,12 +110,20 @@ public class Ataque {
                     rsFind.getInt("NumeroDado"),
                     rsFind.getInt("Bonus")
             );
+            criado.refreshDepend();
             
             return criado;
         } catch (SQLException e) {
             return null;
         }
     }
+    
+    public void refreshDepend() {
+        this.dependItens = AtaqueConsumo.getAllByAtaqueId(this.id);
+    }
+        
+    
+    public int getId() { return id; }
     
     @Override
     public String toString() {

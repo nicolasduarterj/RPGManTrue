@@ -2,6 +2,7 @@ com/nduarte/rpgmantrue/controllers/CharMainController.class
 com/nduarte/rpgmantrue/App.class
 com/nduarte/rpgmantrue/database/MainSQLiteConnection.class
 com/nduarte/rpgmantrue/models/SelectedCharacter.class
+com/nduarte/rpgmantrue/models/AtaqueConsumoBaseRecord.class
 com/nduarte/rpgmantrue/models/Ataque.class
 com/nduarte/rpgmantrue/controllers/CharSelectController.class
 com/nduarte/rpgmantrue/controllers/CharMagicController.class
@@ -12,6 +13,7 @@ com/nduarte/rpgmantrue/models/Personagem.class
 com/nduarte/rpgmantrue/controllers/CharManagementController.class
 com/nduarte/rpgmantrue/controllers/PrimaryController.class
 module-info.class
+com/nduarte/rpgmantrue/models/AtaqueConsumo.class
 com/nduarte/rpgmantrue/controllers/CharCreateEquipController.class
 com/nduarte/rpgmantrue/controllers/CharCreateAttackController.class
 com/nduarte/rpgmantrue/models/Equipamento.class

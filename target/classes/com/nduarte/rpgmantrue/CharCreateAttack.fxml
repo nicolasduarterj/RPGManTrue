@@ -56,7 +56,7 @@
                <font>
                   <Font size="16.0" />
                </font></Label>
-            <TextField layoutX="16.0" layoutY="82.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[Nome]">
+            <TextField fx:id="nomeInput" layoutX="16.0" layoutY="82.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;">
                <font>
                   <Font size="16.0" />
                </font></TextField>
@@ -72,20 +72,16 @@
                <font>
                   <Font size="16.0" />
                </font></Label>
-            <Label layoutX="456.0" layoutY="404.0" text="Status: OK" textFill="#00c452">
-               <font>
-                  <Font size="16.0" />
-               </font></Label>
-            <Button layoutX="566.0" layoutY="399.0" mnemonicParsing="false" style="-fx-background-color: #333333;" text="Salvar" textFill="#d9d9d9" underline="true">
+            <Button layoutX="538.0" layoutY="399.0" mnemonicParsing="false" onAction="#saveAttack" style="-fx-background-color: #333333;" text="Salvar" textFill="#d9d9d9" underline="true">
                <font>
                   <Font size="16.0" />
                </font></Button>
-            <TextField layoutX="14.0" layoutY="242.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[Nivel]">
+            <TextField fx:id="nivelInput" layoutX="14.0" layoutY="242.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
-            <TextField layoutX="498.0" layoutY="82.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;" text="[Dano]">
+            <TextField fx:id="danoInput" layoutX="498.0" layoutY="82.0" style="-fx-background-color: #333333; -fx-text-fill: #d9d9d9;">
                <font>
                   <Font size="16.0" />
                </font>
@@ -95,7 +91,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Button layoutX="240.0" layoutY="399.0" mnemonicParsing="false" style="-fx-background-color: #333333;" text="Adicionar" textFill="#d9d9d9" underline="true">
+            <Button layoutX="240.0" layoutY="399.0" mnemonicParsing="false" onAction="#addDepend" style="-fx-background-color: #333333;" text="Adicionar" textFill="#d9d9d9" underline="true">
                <font>
                   <Font size="16.0" />
                </font>

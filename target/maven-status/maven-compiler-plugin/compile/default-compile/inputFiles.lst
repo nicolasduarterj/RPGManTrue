@@ -10,12 +10,14 @@
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/controllers/CharMagicMaxController.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/App.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/controllers/CharMoneyController.java
+/home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/models/AtaqueConsumo.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/controllers/CharMagicController.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/controllers/CharMainController.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/controllers/PrimaryController.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/controllers/MainMenuController.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/controllers/CharCreateAttackController.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/database/DatabaseInitializationException.java
+/home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/models/AtaqueConsumoBaseRecord.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/controllers/CharCreateItemController.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/controllers/CharEquipEquipmentController.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/models/ItemConsumivel.java
