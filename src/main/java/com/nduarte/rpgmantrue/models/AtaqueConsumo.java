@@ -41,7 +41,7 @@ public class AtaqueConsumo {
         try {
             ArrayList<AtaqueConsumo> found = new ArrayList<>();
             
-            String sql = "SELECT * FROM Ataque_Consumos WHERE Id_Ataque = ?;";
+            String sql = "SELECT * FROM AtaquesConsumos WHERE Id_Ataque = ?;";
 
             PreparedStatement stmtFind = MainSQLiteConnection.getConn().prepareStatement(sql);
             stmtFind.setInt(1, idAtaque);
@@ -57,9 +57,11 @@ public class AtaqueConsumo {
             
             return found;
         } catch (SQLException e) {
+            System.out.println(e.getMessage());
             return new ArrayList<>();
         }
     }
     
     public ItemConsumivel getItem() { return item; }
+    public double getQuantidade() { return quantidade; }
 }

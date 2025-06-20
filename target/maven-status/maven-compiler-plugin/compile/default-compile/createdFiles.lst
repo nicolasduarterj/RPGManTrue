@@ -8,6 +8,7 @@ com/nduarte/rpgmantrue/controllers/CharSelectController.class
 com/nduarte/rpgmantrue/controllers/CharMagicController.class
 com/nduarte/rpgmantrue/controllers/CharMoneyController.class
 com/nduarte/rpgmantrue/controllers/SecondaryController.class
+com/nduarte/rpgmantrue/models/exceptions/UnequippedDependencyException.class
 com/nduarte/rpgmantrue/tests/PersonagemTests.class
 com/nduarte/rpgmantrue/models/Personagem.class
 com/nduarte/rpgmantrue/controllers/CharManagementController.class
@@ -23,6 +24,7 @@ com/nduarte/rpgmantrue/controllers/MainMenuController.class
 com/nduarte/rpgmantrue/models/NameIdRecord.class
 com/nduarte/rpgmantrue/models/ItemConsumivel.class
 com/nduarte/rpgmantrue/controllers/NovoPersonagemController.class
+com/nduarte/rpgmantrue/models/exceptions/NotEnoughItemsException.class
 com/nduarte/rpgmantrue/controllers/CharConsumeItemController.class
 com/nduarte/rpgmantrue/controllers/CharEquipEquipmentController.class
 com/nduarte/rpgmantrue/controllers/CharCreateItemController.class
