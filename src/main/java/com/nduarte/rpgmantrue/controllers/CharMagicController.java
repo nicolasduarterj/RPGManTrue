@@ -80,4 +80,15 @@ public class CharMagicController extends CharManagementController {
             numErr.showAndWait();
         }
     }
+    
+    public void renewStats() {
+        SelectedCharacter.get().getInfoMagica().restaurarUsosRestantes();
+        SelectedCharacter.get().getInfoMagica().saveRemainingStats();
+        
+        Alert ok = new Alert(Alert.AlertType.INFORMATION);
+        ok.setHeaderText("Restaurado!");
+        ok.setContentText("Slots de magia restaurados ao máximo.");
+        ok.showAndWait();
+        initialize();
+    }
 }

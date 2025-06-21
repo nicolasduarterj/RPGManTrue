@@ -138,6 +138,11 @@
                   <Font size="16.0" />
                </font>
             </Label>
+            <Button layoutX="549.0" layoutY="456.0" mnemonicParsing="false" onAction="#renewStats" style="-fx-background-color: #333333;" text="Restaurar" textFill="#d9d9d9" underline="true">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </center>

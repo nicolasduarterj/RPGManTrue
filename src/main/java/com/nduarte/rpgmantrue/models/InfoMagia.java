@@ -133,6 +133,10 @@ public class InfoMagia {
         magiasAtuais[nivel - 1] = x;
     }
     
+    public void restaurarUsosRestantes() {
+        this.magiasAtuais = this.magiasMax.clone();
+    }
+    
     public void saveMaxStats() {
         String sql = "INSERT OR REPLACE INTO MaxUsosMagia("
                 + "Id_Personagem,"
