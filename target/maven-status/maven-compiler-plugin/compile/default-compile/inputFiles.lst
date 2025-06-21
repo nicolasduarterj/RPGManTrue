@@ -2,6 +2,7 @@
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/controllers/CharCreateEquipController.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/tests/PersonagemTests.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/controllers/CharSelectController.java
+/home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/models/exceptions/NotEnoughMagicSlotsException.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/database/MainSQLiteConnection.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/com/nduarte/rpgmantrue/controllers/NovoPersonagemController.java
 /home/nduarte/Repos/java/RPGManTrue/src/main/java/module-info.java

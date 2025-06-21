@@ -5,6 +5,7 @@
 package com.nduarte.rpgmantrue.models;
 import com.nduarte.rpgmantrue.database.MainSQLiteConnection;
 import com.nduarte.rpgmantrue.models.exceptions.NotEnoughItemsException;
+import com.nduarte.rpgmantrue.models.exceptions.NotEnoughMagicSlotsException;
 import com.nduarte.rpgmantrue.models.exceptions.UnequippedDependencyException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -178,7 +179,8 @@ public class Ataque {
     
     
     //------------------[Ações]------------------------------------------//
-    public String rolar() throws NotEnoughItemsException, UnequippedDependencyException {
+    public String rolar(InfoMagia magica) throws NotEnoughItemsException, UnequippedDependencyException,
+            NotEnoughMagicSlotsException {
         if (this.dependEquip != null && !this.dependEquip.getEstaEquipado())
             throw new UnequippedDependencyException("Equipe " + this.dependEquip.getNome() + " para usar esse ataque.");
         
@@ -190,6 +192,15 @@ public class Ataque {
                 System.out.printf("Quantidade depois do uso:%f", itemAlvo.getQuantidade());
             } catch (IllegalArgumentException e) {
                 throw new NotEnoughItemsException("Não há " + itemAlvo.getNome() + " o suficiente para esse ataque.");
+            }
+        }
+        
+        if (this.nivelMagico != 0) {
+            try {
+                magica.gastarUsoRestantesPorNivel(this.nivelMagico);
+                magica.saveRemainingStats();
+            } catch (IllegalArgumentException e) {
+                throw new NotEnoughMagicSlotsException("Não há slots de magia o suficiente para esse ataque.");
             }
         }
         
