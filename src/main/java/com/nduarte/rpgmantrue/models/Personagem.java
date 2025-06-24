@@ -34,6 +34,7 @@ public class Personagem {
     private InfoMagia infoMagica;
     private ArrayList<ItemConsumivel> inventario;
     private ArrayList<Equipamento> equipamentos;
+    private ArrayList<Ataque> ataques;
     
     public static final String[] classesArr = {"Bárbaro", "Bardo", "Bruxo", "Clérigo", 
         "Druida", "Feiticeiro", "Guerreiro", "Ladino", "Mago", "Monge", 
@@ -143,6 +144,7 @@ public class Personagem {
             charCriado.setInfoMagica(InfoMagia.fromId(id));
             charCriado.refreshItens();
             charCriado.refreshEquipamentos();
+            charCriado.refreshAtaques();
             return charCriado;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -166,6 +168,7 @@ public class Personagem {
     public InfoMagia getInfoMagica() { return infoMagica; }
     public ArrayList<ItemConsumivel> getInventario() { return inventario; }
     public ArrayList<Equipamento> getEquipamentos() { return equipamentos; }
+    public ArrayList<Ataque> getAtaques() { return ataques; }
     
     public void setName(String newName) throws IllegalArgumentException {
         if (!isValidName(newName)) {
@@ -241,6 +244,10 @@ public class Personagem {
     
     public void refreshEquipamentos() {
         this.equipamentos = Equipamento.getAllByDonoId(this.id);
+    }
+    
+    public void refreshAtaques() {
+        this.ataques = Ataque.getAllByDonoId(this.id);
     }
     
     //--------------------[Salvamento]-----------------------------------------------//

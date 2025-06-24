@@ -144,7 +144,7 @@ public class CharCreateAttackController extends CharManagementController {
                     : Integer.parseInt(nivelInput.getText());
             
             Pattern danoRegex = Pattern.compile(
-                    "^(?<numero>[0-9]+)?d(?<tipo>[0-9]+)(?<bonus>[+-][0-9])?$"
+                    "^(?<numero>[0-9]+)?d(?<tipo>[0-9]+)(?<bonus>[+-][0-9]+)?$"
             );
             Matcher matcherDano = danoRegex.matcher(danoInput.getText());
             
@@ -175,6 +175,8 @@ public class CharCreateAttackController extends CharManagementController {
             for (AtaqueConsumoBaseRecord x : depends) {
                 AtaqueConsumo.initialize(criado.getId(), x.item, x.quantidade);
             }
+            
+            SelectedCharacter.get().refreshAtaques();
             
             Alert ok = new Alert(Alert.AlertType.INFORMATION);
             ok.setHeaderText("Ataque salvo!");

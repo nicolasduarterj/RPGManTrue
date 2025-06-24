@@ -24,7 +24,7 @@ public class CharUseAttackController extends CharManagementController {
     @FXML
     public void initialize() {
         attackList.setItems(FXCollections.observableList(
-                (List) Ataque.getAllByDonoId(SelectedCharacter.get().getId()))
+                (List) SelectedCharacter.get().getAtaques())
         );
     }
     
