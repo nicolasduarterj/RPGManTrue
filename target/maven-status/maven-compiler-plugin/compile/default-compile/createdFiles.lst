@@ -1,4 +1,5 @@
 com/nduarte/rpgmantrue/controllers/CharMainController.class
+com/nduarte/rpgmantrue/Main.class
 com/nduarte/rpgmantrue/database/MainSQLiteConnection.class
 com/nduarte/rpgmantrue/models/SelectedCharacter.class
 com/nduarte/rpgmantrue/models/Ataque.class

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=RPGManTrue
+GenericName=RPGManTrue
+Comment=RPGManTrue
+Exec=/opt/RPGManTrue/RPGManTrue %U
+Icon=/opt/RPGManTrue/RPGManTrue.png
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Utility

@@ -36,6 +36,31 @@
                     <release>11</release>
                 </configuration>
             </plugin>
+	    <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.3.0</version>
+                <!-- Configure it to "package" everything into a "single" jar -->
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <!-- Extra options, like specifying the main class (containing main(string[] args)) -->
+                <configuration>
+                    <archive>
+                        <manifest>
+				<mainClass>com.nduarte.rpgmantrue.Main</mainClass>
+                        </manifest>
+                    </archive>
+                    <!-- Type of jar to create -->
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
