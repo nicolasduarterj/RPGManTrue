@@ -51,6 +51,8 @@ public class CharConsumeItemController extends CharManagementController {
             
             selected.spend(x);
             selected.save();
+            SelectedCharacter.get().refreshAtaques();
+            SelectedCharacter.get().refreshItens();
             Alert ok = new Alert(Alert.AlertType.INFORMATION);
             ok.setHeaderText("Item consumido!");
             ok.setContentText("Foram consumidos " + x + " unidades do item.");
@@ -84,6 +86,8 @@ public class CharConsumeItemController extends CharManagementController {
             
             selected.add(x);
             selected.save();
+            SelectedCharacter.get().refreshAtaques();
+            SelectedCharacter.get().refreshItens();
             Alert ok = new Alert(Alert.AlertType.INFORMATION);
             ok.setHeaderText("Item adicionado!");
             ok.setContentText("Foram adicionadas " + x + " unidades do item.");

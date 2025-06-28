@@ -43,6 +43,8 @@ public class CharUseAttackController extends CharManagementController {
         try {
             String result = selected.rolar(SelectedCharacter.get().getInfoMagica());
             Alert ok = new Alert(Alert.AlertType.INFORMATION);
+            SelectedCharacter.get().refreshAtaques();
+            SelectedCharacter.get().refreshItens();
             ok.setHeaderText("Ataque " + selected.getNome() + " rolado.");
             ok.setContentText("Resultado: " + result);
             ok.showAndWait();
